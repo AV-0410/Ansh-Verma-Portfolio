@@ -1,0 +1,103 @@
+/* App.css - styles for the WHE WHE Cash Register */
+
+/* Layout: put the number grid and controls side by side*/
+.app {
+  display: flex;
+  gap: 2rem;
+  /* space between left and right panels */
+  padding: 1rem;
+  /* a little breathing room around everything */
+}
+
+/* Each panel takes up half the width*/
+.left-panel,
+.right-panel {
+  flex: 1;
+}
+
+/* Number grid: 20 buttons laid out in rows*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  /* two rows of ten */
+  gap: 0.5rem;
+  /* small gap between each number */
+  margin-bottom: 1rem;
+}
+
+/* Base styling for all buttons*/
+.btn {
+  padding: 0.5rem;
+  /* comfy click size */
+  border: 1px solid #333;
+  /* simple dark border */
+  background: #f0f0f0;
+  /* light grey so selected ones pop */
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Highlight selected number buttons*/
+.btn.selected {
+  background: #4caf50;
+  /* green background to show selection */
+  color: #fff;
+  /* white text for good contrast */
+  border: 2px solid #388e3c;
+}
+
+/* Fade out buttons when they shouldn’t be clickable*/
+.btn:disabled {
+  opacity: 0.6;
+  /* look disabled */
+  cursor: not-allowed;
+}
+
+/* Money pad: a row of dollar-value buttons*/
+.money-pad {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  /* separate from the selected list */
+}
+
+/* Box around the selected numbers area */
+.selected-list {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  /* inside spacing */
+  border-radius: 4px;
+  /* soft corners */
+  margin-bottom: 1rem;
+}
+
+/* Make selected numbers look like little badges */
+.selected-list ul {
+  list-style: none;
+  /* no bullets */
+  padding: 0;
+  margin: 0 0 1rem 0;
+  /* space below before the total */
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  /* wrap badges to next line if needed */
+}
+
+.selected-list li {
+  background: #f9f9f9;
+  /* off-white badge background */
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  /* snug padding inside each badge */
+  font-weight: bold;
+  /* make the number stand out */
+}
+
+/* Control buttons (Clear, Random, Cash) */
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  /* keep buttons separated */
+}
